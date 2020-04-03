@@ -3,8 +3,8 @@ $(".submit").on("click", function(event) {
 
     // Here we grab the form elements
     var newReservation = {
-      customerName: $("#reserve-name").val().trim(),
-      phoneNumber: $("#reserve-phone").val().trim(),
+      friendName: $("#reserve-name").val().trim(),
+      friendImage: $("#reserve-phone").val().trim(),
       scoreArray:[ 
         $("#Q1").val().trim(),
       $("#Q2").val().trim(),
@@ -21,12 +21,7 @@ $(".submit").on("click", function(event) {
     };
 
     console.log(newReservation);
-
-    // This line is the magic. It"s very similar to the standard ajax function we used.
-    // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-    // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-    // depending on if a tables is available or not.
-
+    
     $.post("/api/tables", newReservation,
       function(friendsData) {
           console.log(friendsData);
