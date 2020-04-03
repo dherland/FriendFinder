@@ -3,8 +3,8 @@ $(".submit").on("click", function(event) {
 
     // Here we grab the form elements
     var newReservation = {
-      friendName: $("#reserve-name").val().trim(),
-      friendImage: $("#reserve-phone").val().trim(),
+      friendName: $("#name").val().trim(),
+      friendImage: $("#image").val().trim(),
       scoreArray:[ 
         $("#Q1").val().trim(),
       $("#Q2").val().trim(),
