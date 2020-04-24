@@ -32,10 +32,8 @@ $(".submit").on("click", function(event) {
         var average = sum / friendsData.scoreArray.length;
 
         // Clear the form when submitting
-        $("#reserve-name").val("");
-        $("#reserve-phone").val("");
-        $("#reserve-email").val("");
-        $("#reserve-unique-id").val("");
+        $("#name").val("");
+        $("#image").val("");
 
       });
 
