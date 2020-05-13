@@ -1,8 +1,9 @@
+console.log("this is loaded");
 $(".submit").on("click", function(event) {
     event.preventDefault();
 
     // Here we grab the form elements
-    var newReservation = {
+    var newFriend = {
       friendName: $("#name").val().trim(),
       friendImage: $("#image").val().trim(),
       scoreArray:[ 
@@ -20,16 +21,16 @@ $(".submit").on("click", function(event) {
     ]
     };
 
-    console.log(newReservation);
+    console.log(newFriend);
     
-    $.post("/api/tables", newReservation,
+    $.post("/api/friends", newFriend,
       function(friendsData) {
           console.log(friendsData);
           var sum = 0
-        for (var i = 0; i < friendsData.scoreArray.length; i++){
-            sum += parseInt(friendsData.scoreArray[i])
+        for (var i = 0; i < friendsData.length; i++){
+            sum += parseInt(friendsData[i].scoreArray)
         }
-        var average = sum / friendsData.scoreArray.length;
+        var average = sum / friendsData.length;
 
         // Clear the form when submitting
         $("#name").val("");
